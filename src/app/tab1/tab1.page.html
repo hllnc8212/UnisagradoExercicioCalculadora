@@ -1,0 +1,191 @@
+<!--<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Tab 1
+    </ion-title>
+  </ion-toolbar> 
+</ion-header> -->
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Tab 1</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+ <!-- <div name="history" id="history" *ngIf="view">
+    <ion-input *ngFor="let hOperacao of hOperacoes" type="text"  name="in_h_operation" class="input-visor" value={{hOperacao}} ></ion-input>
+    <ion-input *ngFor="let hResultado of hResultados" type="number" name="in_h_result" class="input-visor font-small" value={{hResultado}} ></ion-input>
+  </div> -->
+<div name="history" id="history" *ngIf="view">
+    <div *ngFor="let hOperacao of hOperacoes; let i = index">
+      <ion-input  type="text"  name="in_h_operation" class="input-visor font-small" value={{hOperacoes[i]}} ></ion-input>
+      <ion-input  type="number" name="in_h_result" class="input-visor " value={{hResultados[i]}} ></ion-input>
+    </div>
+  </div>
+  
+
+  <div name="visor" class="" id="visor">
+    <ion-input type="number" name="in_result" class="input-visor input-result" [(ngModel)]="resultado" ></ion-input>
+    <ion-input type="text"  name="in_operation" class="input-visor font-small" [(ngModel)]="operacao"></ion-input>
+    <ion-button color="dark" size="" id="bt_history" name="bt_history" (click)="viewHistory()"></ion-button>
+  </div>
+
+  <ion-grid>
+    <ion-row *ngFor="let linha of linhas; let i = index">
+      <ion-col *ngFor="let botao of botoes[i]">
+        <ion-button size="large"  class="button-outline {{botao.class}}" (click)="onClick(botao.value)">{{botao.value}}</ion-button>
+      </ion-col>
+    </ion-row>
+
+
+    <!--<ion-row *ngFor="let linha of linhas; let i = index">
+      <ion-col *ngFor="let botao of botoes[i]">
+        <ion-button size="large" class="button-outline">{{botao}}</ion-button>
+      </ion-col>
+    </ion-row>-->
+
+
+    <!--<ion-row class="background-dark-blue">
+      <ion-col>
+        <ion-button color="" size="large" class="button-outline">
+          %
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="" size="large" class="button-outline">
+          √
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="" size="large" class="button-outline">
+          (
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button color="" size="large" class="button-outline">
+          )
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button  size="large" class="button-outline">
+          7
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button  size="large" class="button-outline">
+          8
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button  size="large" class="button-outline">
+          9
+        </ion-button>
+      </ion-col>
+      <ion-col class="border-left">
+        <ion-button  size="large" class="button-outline light-blue">
+          ÷
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button  size="large" class="button-outline light-blue">
+          <
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="button-outline">
+          4
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="button-outline">
+          5
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="button-outline">
+          6
+        </ion-button>
+      </ion-col>
+      <ion-col class="border-left">
+        <ion-button size="large" class="button-outline light-blue">
+          X
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="button-outline light-blue">
+          
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="button-outline">
+          1
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="button-outline">
+          2
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="button-outline">
+          3
+        </ion-button>
+      </ion-col>
+      <ion-col class="border-left">
+        <ion-button size="large" class="button-outline light-blue">
+          -
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="button-outline">
+          
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-button size="large" class="button-outline">
+          0
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="button-outline">
+          ,
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="button-outline">
+          
+        </ion-button>
+      </ion-col>
+      <ion-col class="border-left">
+        <ion-button size="large" class="button-outline light-blue">
+          +
+        </ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button size="large" class="button-outline light-blue">
+          =
+        </ion-button>
+      </ion-col>
+    </ion-row>-->
+    
+  </ion-grid>
+
+  
+</ion-content>
